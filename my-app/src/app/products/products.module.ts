@@ -7,6 +7,9 @@ import { ProductHostDirective } from './product-host.directive';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { ProductViewComponent } from './product-view/product-view.component';
 import { ProductCreateComponent } from './product-create/product-create.component';
+import { ProductsComponent } from './products.component';
+import { ProductsRoutingModule } from './products-routing.module';
+
 
 
 
@@ -18,10 +21,12 @@ import { ProductCreateComponent } from './product-create/product-create.componen
     ProductHostDirective,
     FavoritesComponent,
     ProductViewComponent,
-    ProductCreateComponent
+    ProductCreateComponent,
+    ProductsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ProductsRoutingModule
   ],
 
   exports: [ProductListComponent]

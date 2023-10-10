@@ -1,7 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CartComponent } from './cart/cart.component';
+import { authGuard } from './auth/auth.guard';
+import { checkoutGuard } from './checkout.guard';
 
-const routes: Routes = [];
+
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+
+
+
+
+const routes: Routes = [
+      { path: 'cart', component: CartComponent,
+        canActivate: [authGuard],
+        canDeactivate: [checkoutGuard]},
+      {
+        path: 'about',
+        loadComponent: () => import('./about/about-info/about-info.component').then(c => 
+          c.AboutInfoComponent)
+      },
+      { path: '**', component: PageNotFoundComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

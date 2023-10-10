@@ -12,21 +12,27 @@ import { CopyrightDirective } from './copyright.directive';
 import { NumericDirective } from './numeric.directive';
 import { PermissionDirective } from './permission.directive';
 import { AuthInterceptor } from './auth.interceptor';
+import { CartComponent } from './cart/cart.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    CartComponent,
     CopyrightDirective,
     NumericDirective,
-    PermissionDirective
+    PermissionDirective,
+    PageNotFoundComponent
+   
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    NgbModule,
     ProductsModule,
-    AuthModule
+    AppRoutingModule,
+    HttpClientModule,
+    AuthModule,
+    NgbModule
+    
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]

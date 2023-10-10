@@ -26,4 +26,17 @@
     display: block;
   }
   /* end of styling the form */
+  a {
+    color: #1976d2;
+    text-decoration: none;
+    margin: 5px;
+  }
+  a:hover {
+    opacity: 0.8;
+  }
+  .active {
+    color: black;
+  }
+  
+  
   
